@@ -27,28 +27,86 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
 
+1.Use module projname(input,output) to start the Verilog programmming.
 
+2.Assign inputs and outputs using the word input and output respectively.
 
-Write the detailed procedure here 
+3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
+
+4.Use each output to represent one for difference and the other for borrow.
+
+5.End the verilog program using keyword endmodule.
 
 
 ## Program:
-/*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
+```
+Developed by: Srinithi V
+RegisterNumber: 22006082
+```
+Half Subtractor :
+```
+module HalfSubtractor(A,B,Difference,Borrow);
+input A,B;
+output Difference,Borrow;
+assign Difference = (A^B);
+assign Borrow = (~A&B);
+endmodule
+```
+Full Subtractor :
+```
+module FullSubtractor(A,B,C,Difference,Borrow);
+input A,B,C;
+output Difference,Borrow;
+assign Difference = (A^B^C);
+assign Borrow = (~A&(B^C)|(B&C));
+endmodule
+```
 ## Output:
+
+## Logical Symbol
+
+Half Subtractor :
+
+![](/and.png) ![](/xor.png) ![](/not.png)
+
+
+Full Subtractor :
+
+![](/and.png) ![](/not.png) ![](/xor.png) ![](/not.png)
+
 
 ## Truthtable
 
+Half Subtractor :
 
+![](/t1.png)
+
+Full Subtractor :
+
+![](/t2.png)
 
 ##  RTL realization
 
+Half Subtractor :
+
+![](/L4.png)
+
+Full Subtractor :
+
+![](/L5.png)
 
 ## Timing diagram 
 
+Half Subtractor :
+
+![](/td1.png)
+
+Full Subtractor :
+
+![](/td2.png)
+
+
 ## Result:
-Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
+Thus , the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
